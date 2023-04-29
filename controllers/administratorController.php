@@ -1,6 +1,6 @@
 <?php
 
-class AdministratorController extends Administrator{
+class AdministratorController{
     function index(){
         require_once('views/all/header.php');
         require_once('views/all/nav.php');
@@ -10,6 +10,7 @@ class AdministratorController extends Administrator{
     }
 
     function table_users(){
+        $administrator = new Administrator();
         ?>
             <table class="table table-bordered">
                 <thead>
@@ -23,7 +24,7 @@ class AdministratorController extends Administrator{
                 </thead>
                 <tbody >		
             <?php
-            foreach (parent::get_view_users()	as $data) {
+            foreach ($administrator->get_view_users()	as $data) {
             ?>
             <tr>
                 <td><?php echo $data->id_user; ?> </td>
@@ -50,16 +51,22 @@ class AdministratorController extends Administrator{
     }
 
     function deleteUser(){
-        parent::set_delete_user($_REQUEST['id']);
+        //parent::set_delete_user($_REQUEST['id']);
+        $administrator = new Administrator();
+        $administrator->set_delete_user($_REQUEST['id']);
     }
 
     function registerUser(){
         $data = array('name' => $_REQUEST['name'], 'last_name' => $_REQUEST['last_name'], 'email' => $_REQUEST['email']);
-        parent::set_register_user($data);
+        //parent::set_register_user($data);
+        $administrator = new Administrator();
+        $administrator->set_register_user($data);
     }
 
     function updateUser(){
         $data = array('id' => $_REQUEST['id'], 'name' => $_REQUEST['name'], 'last_name' => $_REQUEST['last_name'], 'email' => $_REQUEST['email']);
-        parent::set_update_user($data);
+        //parent::set_update_user($data);
+        $administrator = new Administrator();
+        $administrator->set_update_user($data);
     }
 }
