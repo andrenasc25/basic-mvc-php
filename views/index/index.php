@@ -22,9 +22,7 @@
                 </thead>
                 <tbody >		
             <?php
-			if(isset($administrator)){
 				foreach ($administrator->get_view_users()	as $data) {
-			}
             ?>
             <tr>
                 <td><?php echo $data->id_user; ?> </td>
