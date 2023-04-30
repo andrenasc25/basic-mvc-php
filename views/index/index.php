@@ -1,13 +1,11 @@
 <div id="app">
-	{{ message }}
+	<component></component>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<center><h1>CRUD - OFAAOFICIAL - MVC</h1></center>
+				<h1>CRUD - OFAAOFICIAL - MVC</h1>
 				<br>			
-				<center>
 				<button type="button" onclick="ModalRegister();" class="btn btn-success">Agregar usuario</button>
-				</center>
 				<br>
 			<!--<div id="information">-->
 			<div>

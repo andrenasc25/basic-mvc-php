@@ -1,9 +1,4 @@
-const { createApp } = Vue
+import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import Component from './component.js'
 
-createApp({
-data() {
-    return {
-        message: 'Hello Vue!'
-    }
-}
-}).mount('#app')
+createApp(Component).mount('#app')
